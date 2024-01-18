@@ -17,12 +17,14 @@ pub async fn test(is_pub: bool) -> Result<()> {
     Ok(())
 }
 
+const SN: &str = "sdk/ros/image";
+
 const CYCLE_TIME: Duration = Duration::from_micros(20);
 
 async fn publish() -> Result<()> {
     tracing::info!("begin iceoryx2 publish");
 
-    let service_name = ServiceName::new("sdk/ros/image")?;
+    let service_name = ServiceName::new(SN)?;
 
     let service = zero_copy::Service::new(&service_name)
         .publish_subscribe()
@@ -49,7 +51,7 @@ async fn publish() -> Result<()> {
 
 async fn subscribe() -> Result<()> {
     tracing::info!("begin iceoryx2 subscribe");
-    let service_name = ServiceName::new("sdk/ros/image")?;
+    let service_name = ServiceName::new(SN)?;
     let service = zero_copy::Service::new(&service_name)
         .publish_subscribe()
         .open_or_create::<Image>()?;
