@@ -7,17 +7,18 @@ edition = "2021"
 
 [dependencies]
 anyhow = "1.0.75"
+
 r2r = "0.8.2"
-r2r_msg_gen = "0.8.2"
 safe_drive = { version = "0.3.6", features = ["humble"] }
 safe_drive_msg = "0.2.3"
 
-builtin_interfaces = { path = "/nav_env/msg/builtin_interfaces" }
-std_msgs = { path = "/nav_env/msg/std_msgs" }
-sensor_msgs = { path = "/nav_env/msg/sensor_msgs" }
-r2r_rcl = "0.8.2"
 tracing-log = "0.2.0"
 tracing = { version = "0.1.40", features = ["log"] }
 tracing-subscriber = "0.3.18"
+tokio = { version = "1.35.1", features = ["full"] }
+futures-util = "0.3.30"
+iceoryx-rs = "*"
+iceoryx2 = "0.2.2"
+clap = { version = "4.4.18", features = ["derive"] }
 
 # mininav_idl = { path = "/home/passchaos/robotics/controller/mininav-idl/ros2_interfaces" }
