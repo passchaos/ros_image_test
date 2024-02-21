@@ -1,13 +1,7 @@
 use std::time::Duration;
 
 use anyhow::Result;
-use iceoryx2::prelude::Subscribe;
-use iceoryx2::{
-    iox2::{Iox2, Iox2Event},
-    payload_mut::{PayloadMut, UninitPayloadMut},
-    port::publish::UninitLoan,
-    service::{service_name::ServiceName, zero_copy, Service},
-};
+use iceoryx2::prelude::*;
 
 use crate::{data_size, Image};
 
